@@ -4,16 +4,13 @@
 	"keywords": ["openseedbox", "torrent", "parse", "bencode", "bdecode", "magnet"],
 	"authors": [
 		{
-			"name": "Adrien Gibrat",
-			"email": "adrien.gibrat@gmail.com"
-		},
-		{
 			"name": "Erin Drummond",
 			"email": "erin.dru@gmail.com"
 		}
 	],
 	"require": {
-		"php": ">=5.4.0"
+		"php": ">=5.4.0",
+		"bhutanio/laravel-bencode": "dev-master"
 	},
 	"require-dev": {		
 		"phpunit/phpunit": "3.7.*"
