@@ -1,7 +1,5 @@
 #Torrent/Magnet Parser
 
-*The torrent portion of this is forked from (adriengibrat/torrent-rw)[https://github.com/adriengibrat/torrent-rw]
-
 PHP version 5.4+
 
 LICENSE: This source file is subject to version 3 of the GNU GPL
