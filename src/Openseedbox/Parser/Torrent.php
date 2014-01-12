@@ -1,7 +1,7 @@
 <?php
 
 namespace Openseedbox\Parser;
-use Bhutanio\BEncode\BENCODE;
+use Bhutanio\BEncode\BEncode;
 
 class Torrent implements TorrentInterface, TorrentParserInterface {
 
@@ -13,7 +13,7 @@ class Torrent implements TorrentInterface, TorrentParserInterface {
 	 * @inheritdoc
 	 */
 	public function parse($data) {
-		$this->encoder = new BENCODE();
+		$this->encoder = new BEncode();
 		$this->parsed = $this->encoder->bdecode($data);		
 		$this->data = $data;
 		return $this;

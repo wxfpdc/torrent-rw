@@ -19,5 +19,9 @@
 		"psr-0": {
 			"Openseedbox": "src/"
 		}
-	}
+	},
+	"repositories" : [{
+		"type" : "git",
+		"url" : "https://github.com/erindru/laravel-bencode.git"
+	}]
 }

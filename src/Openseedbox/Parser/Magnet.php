@@ -41,7 +41,11 @@ class Magnet implements TorrentInterface {
 	}
 
 	public function getName() {
-		return $this->parsed["dn"];
+		$dn = @$this->parsed["dn"];
+		if (!$dn) {
+			return $this->getInfoHash();
+		}
+		return $dn;
 	}
 
 	public function getTrackerUrls() {

@@ -5,8 +5,8 @@ use Openseedbox\Parser\Magnet;
 class MagnetTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp() {
-		$m = new Magnet();
-		$this->magnet = $m->parse($this->getTestMagnet());
+		$this->parser = new Magnet();
+		$this->magnet = $this->parser->parse($this->getTestMagnet());
 	}
 
 	public function testIsFromMagnet() {
@@ -57,6 +57,12 @@ class MagnetTest extends PHPUnit_Framework_TestCase {
 		$this->assertCount(2, $trackers);
 		$this->assertEquals("http://tracker1.com:80", $trackers[0]);
 		$this->assertEquals("http://tracker2.com:8080", $trackers[1]);
+	}
+
+	public function testGetNameOnMagnetWithoutDNReturnsHash() {
+		$hash = "07a9de9750158471c3302e4e95edb1107f980657";
+		$magnet = $this->parser->parse("magnet:?xt=urn:btih:{$hash}");
+		$this->assertEquals($hash, $magnet->getName());
 	}
 
 	private function getTestMagnet() {
